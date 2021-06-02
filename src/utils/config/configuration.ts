@@ -1,33 +1,21 @@
-import jwt from 'jsonwebtoken';
+export type Configuration = ReturnType<typeof configFactory>
 
-export type Configuration = ReturnType<typeof configFactory>;
-
-const APP_NAME = 'nest_app';
-const ALGO: jwt.Algorithm = 'RS256';
+const APP_NAME = 'calebpitan/autochek-assessment'
 
 const configFactory = () => ({
   app: {
     name: APP_NAME,
-    port: Number(process.env.PORT) || 3000,
+    port: Number(process.env.PORT) || 5000,
     env: process.env.NODE_ENV || 'development',
     production: process.env.NODE_ENV === 'production',
   },
   database: {
-    uri: process.env.MONGO_CONNECT_STRING || `mongodb://localhost/${APP_NAME}`,
-    redisUri: process.env.REDIS_URL || 'redis://localhost:6379',
+    host: process.env.PG_HOST || 'localhost',
+    port: Number(process.env.PG_PORT) || 5432,
+    username: process.env.PG_USER || `postgres`,
+    password: process.env.PG_PASSWORD || 'root',
+    database: process.env.PG_DATABASE || 'autochek_assessment',
   },
-  session: {
-    secret: process.env.SESSION_SECRET!,
-    expiry: 60 * 60 * 24 * 7, // 1 week in seconds (7 days)
-  },
-  auth: {
-    jwt: {
-      algo: ALGO as jwt.Algorithm,
-      RS256PK: process.env.JWT_RS256_KEY_PUB!,
-      RS256SK: process.env.JWT_RS256_KEY!,
-      expiry: '1h', // Token must be refreshed every hour
-    },
-  },
-});
+})
 
-export default configFactory;
+export default configFactory

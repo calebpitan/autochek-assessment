@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppController (e2e) /location (POST) 1`] = `
+Object {
+  "data": Object {
+    "location": Object {
+      "contact_person": "Jamie Foxx",
+      "coordinates": Object {
+        "coordinates": Array [
+          6.4550575,
+          3.3941795,
+        ],
+        "type": "Point",
+      },
+      "description": "Lagos in Nigeria",
+      "id": 2,
+      "location_name": "Lagos",
+      "phone": "07066001122",
+      "website": "https://www.lagos.ng",
+    },
+  },
+  "message": "Location created successfully!",
+  "success": true,
+}
+`;
+
+exports[`AppController (e2e) /location/:id (GET) 1`] = `
+Object {
+  "data": Object {
+    "location": Object {
+      "contact_person": "Caleb Adepitan",
+      "coordinates": Object {
+        "coordinates": Array [
+          6.4550575,
+          3.3941795,
+        ],
+        "type": "Point",
+      },
+      "description": "Lagos in Nigeria",
+      "id": 1,
+      "location_name": "Lagos",
+      "phone": "07066029547",
+      "website": "https://www.lagos.ng",
+    },
+  },
+}
+`;
+
+exports[`AppController (e2e) /location/1 (DELETE) 1`] = `
+Object {
+  "data": Object {
+    "affected": 1,
+    "raw": Array [],
+  },
+}
+`;
+
+exports[`AppController (e2e) /location/1 (PUT) 1`] = `
+Object {
+  "data": Object {
+    "location": Object {
+      "affected": 1,
+      "generatedMaps": Array [],
+      "raw": Array [],
+    },
+  },
+  "message": "Location updated successfully!",
+  "success": true,
+}
+`;
