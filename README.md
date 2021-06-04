@@ -83,6 +83,10 @@ You can learn more about [PostGIS](https://postgis.net/).
 
 When all this necessary installations are complete, make sure your PostgreSQL server is running as a background service (or at least running).
 
+```bash
+yarn start:dev
+```
+
 ## Setting up environment variables
 
 There's an `.env.example` file in this repo that exposes the ENV_VARS required to run this application. They are to be created into an `.env` file in the same directory as the `.env.example` with actual values.
