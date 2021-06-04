@@ -263,8 +263,8 @@ curl -X DELETE http://localhost:5000/location/1
 Get the great circle distance between two locations
 
 - query
-  - loc1 (`string`) - the latitued and longitudes separated by a comma
-  - loc2 (`string`) - the latitued and longitudes separated by a comma
+  - loc_1 (`string`) - the latitued and longitudes separated by a comma
+  - loc_2 (`string`) - the latitued and longitudes separated by a comma
 
 ```bash
 curl -X GET http://localhost:5000/location/distance?loc_1=6.4550575,3.3941795&loc_2=9.4550575,5.3941795
@@ -276,7 +276,7 @@ curl -X GET http://localhost:5000/location/distance?loc_1=6.4550575,3.3941795&lo
   {
     "data": {
       "location": {
-        "distance": 399721.0826,
+        "distance": 399721.083,
         "unit": "meter"
       }
     }
